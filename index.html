@@ -13,16 +13,29 @@
   <script>
     window.$docsify = {
       name: 'yxn-blog',
-      repo: '',
+      repo: 'yxn-coder',
 	  loadSidebar: true,
+	  alias: {
+		  '/.*/_sidebar.md': '/_sidebar.md'
+	  },
 	  coverpage: true,
+	  loadNavbar: true,
+	  subMaxLevel: 3,
+	  sidebarDisplayLevel: 1,  // set sidebar display level
+	  search: 'auto', // 默认值
+	  search : [
+		  '/',            // => /README.md
+		  '/Java/',      // => /Java/README.md
+		  '/深度学习/',
+		  '/LeetCode刷题篇/'
+      ],
 	  search: {
 		  maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-		  paths: [], // or 'auto'
 		  placeholder: 'Type to search',
 		  placeholder:'请输入搜索关键字',
 		  noData: '没有结果，别搜了',
-		  depth: 2,
+		  depth: 6,
+		  pathNamespaces: ['/', '/Java/', '/深度学习/', '/LeetCode刷题篇/']
 	  },
 	  count:{
 		countable:true,
@@ -36,5 +49,9 @@
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1.25.0/components/prism-java.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+
 </body>
 </html>
